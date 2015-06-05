@@ -38,6 +38,43 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 326.0, 48.5, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "Range (Scaling)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 950.0, 77.0, 100.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 326.0, 160.5, 150.0, 48.0 ],
+					"style" : "",
+					"text" : "Lowest Note Possible (Offset)\n"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-42",
 					"maxclass" : "number",
 					"numinlets" : 1,
@@ -159,7 +196,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 223.0, 666.5, 45.0, 45.0 ],
+					"patching_rect" : [ 223.5, 664.5, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -213,7 +250,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 769.0, 84.5, 50.0, 22.0 ],
+					"patching_rect" : [ 1004.0, 106.5, 50.0, 22.0 ],
 					"style" : ""
 				}
 

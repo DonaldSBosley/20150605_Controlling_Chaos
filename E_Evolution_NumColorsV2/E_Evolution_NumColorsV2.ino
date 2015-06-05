@@ -56,10 +56,6 @@ void loop(){
 
   //Outerloop (k) sets which pixel will recieve the color
   for (k = 0; k < NUM_PIXELS; k++){  
-    for(i=0;i<NUM_PIXELS;i++){
-      // Set all non "k" pixels to zero
-      pixels.setPixelColor(i, pixels.Color(0, 0, 0));
-    }
 
     //Replace the color selection with a function...12 % chance of change...
     //Insert into the loop and make a decision on whether to change...
@@ -72,7 +68,8 @@ void loop(){
     }
     pixels.setPixelColor(k, pixels.Color(red, green, blue)); //Turn on 'k'th LED
     pixels.show();                                           //Show all values
-    delay(period);                                           //Delay to next Move 
+    delay(period);     //Delay to next Move 
+    pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero
   }
 }
 
@@ -80,7 +77,7 @@ void loop(){
 void color_select(void){
   //Redeclare i & k so that the external variables are not altered...
   //Otherwise it would force the loop count to reset to the random values
-  
+
   int i, k;
   //Re-randomize Color and number of colors
   i = random(1,4); 
@@ -159,6 +156,7 @@ void color_select(void){
   }
 
 }
+
 
 
 

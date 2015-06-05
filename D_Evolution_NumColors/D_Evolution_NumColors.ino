@@ -138,15 +138,13 @@ void loop(){
 
   //Outerloop (k) sets which pixel will recieve the color
   for (k = 0; k < NUM_PIXELS; k++){  
-    for(i=0;i<NUM_PIXELS;i++){
-      // Set all non "k" pixels to zero
-      pixels.setPixelColor(i, pixels.Color(0, 0, 0));
-    }
     pixels.setPixelColor(k, pixels.Color(red, green, blue)); //Turn on 'k'th LED
     pixels.show();                                           //Show all values
     delay(period);                                         //Delay to next Move 
+    pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero  
   }
 }
+
 
 
 

@@ -64,14 +64,14 @@ void loop(){
     //Outerloop (k) sets which pixel will recieve the color
     while(k < NUM_PIXELS){  
 
-      pixel_zero(); //Setting all non-k values to 0 for new color
+      //pixel_zero(); //Setting all non-k values to 0 for new color
       does_something_change(); //Random Color or Speed Change
       color_vary(); //This code has been replaced by a subfunction
 
       pixels.setPixelColor(k, pixels.Color(red2, green2, blue2)); //Turn on 'k'th LED
       pixels.show();                                           //Show all values
       delay(period);        //Delay to next Move 
-
+      pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero
       //Decision to Change Direction - about an 8% chance
       if (random(0,255) > 240) {
         dir = !dir; //Flip the boolean value and reverse the direction
@@ -89,14 +89,14 @@ void loop(){
 
   if(!dir) {
     while(k > -1){
-      pixel_zero(); //Setting all non-k values to 0 for new color
+      //pixel_zero(); //Setting all non-k values to 0 for new color
       does_something_change(); //Random Color or Speed Change
       color_vary(); //This code has been replaced by a subfunction
 
       pixels.setPixelColor(k, pixels.Color(red2, green2, blue2)); //Turn on 'k'th LED
       pixels.show();                                           //Show all values
       delay(period);                                           //Delay to next Move 
-
+       pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero
       //Decision to change direction - about an 8% chance
       if (random(0,255) > 240) {
         dir = !dir; //Flip the boolean value and reverse the direction
