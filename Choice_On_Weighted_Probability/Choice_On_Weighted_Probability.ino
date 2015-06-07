@@ -72,16 +72,16 @@ uint8_t rand_decision_value = 0;
 
 uint8_t state_probability_table[4][4] = {
   {
-    70, 80, 90, 100  }
+    70, 80, 90, 100    }
   , //70, 10, 10, 10;
   {
-    0, 70, 90, 100  }
+    0, 70, 90, 100    }
   , //0, 70, 20, 10;
   {
-    0, 20, 90, 100  }
+    0, 20, 90, 100    }
   , //0, 20, 70, 10;
   {
-    20, 30, 40, 100  }
+    20, 30, 40, 100    }
   ,//20, 10, 10, 60;
 };
 
@@ -98,8 +98,13 @@ void setup(){
 
 void loop(){
 
-  //Generate the Random Number to Make a Decision
-  rand_decision_value = random(0,101);        //0 - 100 (101 non-inclusive)
+  /* Generate the Random Number to Make a Decision :
+   1 - 100 (101 exclusive), we don't use 0
+   because we don't want to allow something with a 
+   0% possibility of transition from occuring.
+   */
+  rand_decision_value = random(1,101);        
+
   Serial.print("Random Number : ");              // prints the label
   Serial.println(rand_decision_value, DEC);   //prints a value
 
@@ -121,6 +126,7 @@ void loop(){
 
   delay(2000); //Delays 2 seconds so you can actually watch terminal 
 }
+
 
 
 
