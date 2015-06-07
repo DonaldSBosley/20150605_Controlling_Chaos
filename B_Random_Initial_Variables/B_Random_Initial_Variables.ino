@@ -26,7 +26,7 @@ uint8_t  red = 0;
 uint8_t  green = 0;
 uint8_t  blue = 0;  
 
-uint8_t  i,k = 0;         //Variables for counting
+uint8_t  i,k = 0;       //Variables for counting
 uint32_t period = 0;    //Period in ms between color moves
 
 //Initialize Neo-pixel library
@@ -36,7 +36,7 @@ void setup(){
   pixels.begin(); // This initializes the NeoPixel library.
  
   //Seed the random number generator with "pin noise" 
-  //Arduino's DAC is not necissarily the best seed...
+  //Arduino's DAC is not necessarily the best seed...
   randomSeed(analogRead(0));
   
   //Randomly select the color intensity values
@@ -50,14 +50,12 @@ void setup(){
 }
 
 void loop(){
-  /*This is a very simple way to do this...the modulo operator are explored in 
-  later iterations of this code */
   
   //Outerloop (k) sets which pixel will recieve the color
   for (k = 0; k < NUM_PIXELS; k++){  
     pixels.setPixelColor(k, pixels.Color(red, green, blue)); //Turn on 'k'th LED
     pixels.show();                                           //Show all values
-    delay(period);                                         //Delay to next Move 
+    delay(period);                                           //Delay to next Move 
     pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero
   }
 }

@@ -38,10 +38,8 @@ void setup(){
 }
 
 void loop(){
-  /*This is a very simple way to do this...the modulo operator is explored in 
-   later iterations of this code */
 
-  //Outerloop (k) sets which pixel will recieve the color
+  //Loop counter (k) sets which pixel will recieve the color
   for (k = 0; k < NUM_PIXELS; k++){  
     pixels.setPixelColor(k, pixels.Color(red, green, blue)); //Turn on 'k'th LED
     pixels.show();                                           //Show all values

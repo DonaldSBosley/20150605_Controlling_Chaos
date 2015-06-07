@@ -10,6 +10,7 @@
  *
  *  This adds a scalar value to each movement of color - in other 
  *  words, the colors intensity changes slightly each time there is a stepwise motion.
+ *  This adds a randomized sense of pulsing or shift to the color intensity.
  *
  */
 

@@ -68,7 +68,7 @@ void loop(){
     }
     pixels.setPixelColor(k, pixels.Color(red, green, blue)); //Turn on 'k'th LED
     pixels.show();                                           //Show all values
-    delay(period);     //Delay to next Move 
+    delay(period);                                           //Delay to next Move 
     pixels.setPixelColor(k, pixels.Color(0, 0, 0));          //Reset that pixel to zero
   }
 }
